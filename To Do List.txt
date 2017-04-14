@@ -1,0 +1,5 @@
+Here are some things that we need to develop further:
+
+1. Making a visualization with the 3d points (where the z-value is size or color or something.)
+2. Getting the xyz points out of the PDB file and dropped into the repository.
+3. Rewrite the parallel code to select from the 100-ish points.
