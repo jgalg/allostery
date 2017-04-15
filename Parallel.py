@@ -80,41 +80,57 @@ def DFS2(current): # takes a point input
 def full_run():
     global path, alldict, points
     path = []
-    alldict, points = gen_points(20)
+    alldict, points = gen_points(200)
     DFS2(0)
 
 # quiet()
-for i in range(0,10):
-    full_run()
-loud()
+# for i in range(0,10):
+#     full_run()
+# loud()
 
-print("--- serial: %s seconds ---" % (time.time() - start_time))
+# print("--- serial: %s seconds ---" % (time.time() - start_time))
 
 def Main():
     take1 = Thread(target=full_run, args=())
     take2 = Thread(target=full_run, args=())
     take3 = Thread(target=full_run, args=())
+    take4 = Thread(target=full_run, args=())
+    take5 = Thread(target=full_run, args=())
+    take6 = Thread(target=full_run, args=())
+    take7 = Thread(target=full_run, args=())
+    take8 = Thread(target=full_run, args=())
+    take9 = Thread(target=full_run, args=())
+    take10 = Thread(target=full_run, args=())
     take1.start()
     take2.start()
     take3.start()
+    take4.start()
+    take5.start()
+    take6.start()
+    take7.start()
+    take8.start()
+    take9.start()
+    take10.start()
     print("Main complete")
 
-start_time = time.time()
+# start_time = time.time()
 
 # quiet()
 if __name__ == '__main__':
     Main()
 
-print("--- parallel: %s seconds ---" % (time.time() - start_time))
+# print("--- parallel: %s seconds ---" % (time.time() - start_time))
 
-quiet()
+# quiet()
 # loud()
 
 
+# serial: 63.95 seconds.
+# parallel: 81.22 seconds.
 
-
-
-
+# I don't think it's actually running in parallel, but pseudo parallel.
+# Once we get everything else running, we'll need to talk to Prof. Thayer
+# about how to actually run things in parallel on the cluster.
 
 
 # bottom
