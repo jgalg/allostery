@@ -31,35 +31,80 @@ for i in range(301,415):
 
 print(alldict)
 
-xs = []
-ys = []
+xs_1 = []
+ys_1 = []
+xs_2 = []
+ys_2 = []
+xs_3 = []
+ys_3 = []
+xs_4 = []
+ys_4 = []
+xs_5 = []
+ys_5 = []
+xs_6 = []
+ys_6 = []
 
 for i in range (301,415):
     x = res_dict[i]
-    xs.append(x[0])
-    ys.append(x[1])
-    z = x[2]
-    intensity = (100/258)*z
-    color = "#0000" + str(intensity)
-    plt.()
+    if x[2] <  27:
+        xs_1.append(x[0])
+        ys_1.append(x[1])
+    if (x[2] >=  27 and x[2] < 30):
+        xs_2.append(x[0])
+        ys_2.append(x[1])
+    if (x[2] >=  30 and x[2] < 34):
+        xs_3.append(x[0])
+        ys_3.append(x[1])
+    if (x[2] >=  34 and x[2] < 38):
+        xs_4.append(x[0])
+        ys_4.append(x[1])
+    if (x[2] >=  38 and x[2] < 42):
+        xs_5.append(x[0])
+        ys_5.append(x[1])
+    if (x[2] >  42):
+        xs_6.append(x[0])
+        ys_6.append(x[1])
 
-plt.clf()
+print(len(xs_1))
+print(len(xs_2))
+print(len(xs_3))
+print(len(xs_4))
+print(len(xs_5))
+print(len(xs_6))
 
-for i in range(301, 415):
-    z = (x[2]
-    intensity = (100/258)*z
-    color = "#0000" + str(intensity)
-    plt.()
+
+color1 = "#0000" + str(25*(int(100/45)))
+color2 = "#0000" + str(29*(int(100/45)))
+color3 = "#0000" + str(33*(int(100/45)))
+color4 = "#0000" + str(37*(int(100/45)))
+color5 = "#0000" + str(41*(int(100/45)))
+color6 = "#0000" + str(45*(int(100/45)))
+
+print(color1)
+print(color2)
+print(color3)
+print(color4)
+print(color5)
+print(color6)
+
+plt.plot(xs_1, ys_1, '#000050.') # plot all points
+plt.plot(xs_2, ys_2, color2) # plot all points
+plt.plot(xs_3, ys_3, color3) # plot all points
+plt.plot(xs_4, ys_4, color4) # plot all points
+plt.plot(xs_5 ,ys_5, color5) # plot all points
+plt.plot(xs_6 ,ys_6, color6) # plot all points
+
+# print(plt.get_plot_commands())
 
 
-z = 49.24
-intensity = int((100/258)*z)
-color = "#0000" + str(intensity)
-print("color", color)
-
-plt.plot(xs,ys, 'color') # plot all points
-
+# # Generate data...
+# t = np.linspace(0, 2 * np.pi, 20)
+# x = np.sin(t)
+# y = np.cos(t)
 #
+# plt.scatter(t,x,c=y)
+# plt.show()
+
 # x_data = [] # create list for line-segment x-data
 # y_data = [] # create list for line-segment y-data
 #
