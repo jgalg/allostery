@@ -5,6 +5,7 @@ from threading import Thread
 import time
 import sys
 import os
+from multiprocessing import Pool
 
 
 start_time = time.time()
@@ -36,7 +37,7 @@ def gen_points(n):
     points = xyz
     # points = xy
     alldict = {}
-    threshold = .5
+    threshold = .22
     for i in range(0,len(points)):
         templist = []
         for j in range(0, len(points)):
@@ -77,7 +78,7 @@ def DFS2(current): # takes a point input
 # If you want to run it in series, comment out MAIN below and call
 # your function in series.
 
-def full_run():
+def full_run(stuff):
     global path, alldict, points
     path = []
     alldict, points = gen_points(200)
@@ -91,27 +92,8 @@ def full_run():
 # print("--- serial: %s seconds ---" % (time.time() - start_time))
 
 def Main():
-    take1 = Thread(target=full_run, args=())
-    take2 = Thread(target=full_run, args=())
-    take3 = Thread(target=full_run, args=())
-    take4 = Thread(target=full_run, args=())
-    take5 = Thread(target=full_run, args=())
-    take6 = Thread(target=full_run, args=())
-    take7 = Thread(target=full_run, args=())
-    take8 = Thread(target=full_run, args=())
-    take9 = Thread(target=full_run, args=())
-    take10 = Thread(target=full_run, args=())
-    take1.start()
-    take2.start()
-    take3.start()
-    take4.start()
-    take5.start()
-    take6.start()
-    take7.start()
-    take8.start()
-    take9.start()
-    take10.start()
-    print("Main complete")
+    p = Pool()
+    p.map(full_run, np.arange(0,100))
 
 # start_time = time.time()
 
