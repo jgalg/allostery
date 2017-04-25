@@ -1,0 +1,3 @@
+if alldict[current] == []: (line 105 in DFS 4) might be excisable
+active site resid 372     -- HIS
+active site resid 309-319 -- choose  GLU 310
