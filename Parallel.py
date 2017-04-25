@@ -82,7 +82,10 @@ def full_run(stuff):
     global path, alldict, points
     path = []
     alldict, points = gen_points(200)
-    DFS2(0)
+    print(type(points))
+    # DFS2(0)
+
+full_run(3.)
 
 # quiet()
 # for i in range(0,10):
