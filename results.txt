@@ -1,0 +1,13 @@
+Test Results:
+
+Run 1:
+26 April 2017
+1,000,000 picks, separation = 6 Angstroms, start 310, end 372.
+Cluster Parameters: tinymem, 8 cores, 25 minutes.
+Results: Success Rate: 0.0793%
+
+Run 2:
+26 April 2017
+1,000,000 picks, separation = 6.5 Angstroms, start 310, end 372.
+Cluster Parameters: tinymem, 16 cores,
+Results: Success Rate:

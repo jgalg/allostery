@@ -91,7 +91,7 @@ def distance(pointA, pointB):
 
 def gathering():
     global res_dict
-    threshold = 6
+    threshold = 6.5
     alldict = {}
     random.seed()
     handful = random.sample(list(res_dict2), 21)
@@ -150,7 +150,7 @@ def letsgo2():
 f = open('/home/ajstein/allostery/failure.txt', 'w')
 f.close()
 f = open('/home/ajstein/allostery/failure.txt', 'a')
-n = 100
+n = 1000000
 for i in range(0,n):
     failure = 0
     letsgo2()
