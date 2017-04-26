@@ -1,8 +1,6 @@
 import numpy as np
 import random
 import time
-from multiprocessing import Pool
-start_time = time.time()
 
 res_dict = {301: (59.665, 65.467, 44.936), 302: (55.93, 65.46, 44.229), 303: (56.331, 62.061, 42.559),
             304: (56.648, 60.478, 45.98), 305: (53.376, 61.897, 47.293), 306: (50.281, 59.726, 47.039),
@@ -83,7 +81,6 @@ res_dict2 = {301: (59.665, 65.467, 44.936), 302: (55.93, 65.46, 44.229), 303: (5
             412: (51.036, 53.761, 36.933), 413: (54.37, 52.309, 35.812), 414: (54.872, 50.526, 32.52),
             415: (57.787, 48.123, 31.992)}
 
-
 def distance(pointA, pointB):
     x = pointA[0] - pointB[0]
     y = pointA[1] - pointB[1]
@@ -109,35 +106,6 @@ def gathering():
                 templist.append(j)
         alldict[i] = templist
     return handful, alldict
-
-
-def DFS3(current): # takes a point input
-    global alldict, handful, res_dict, failure
-    # print('current node: ', current)
-    path.append(current)    # add current point to path
-    if alldict[current] == []: # check that it has options
-        failure += 1
-        return print('failed', path)
-    current = list(set(alldict[current]) - set(path))  # make current now the options for that point, excluding path
-    # print('current branchs: ', current)
-    if current == []:
-        failure += 1
-        return print('failed', path)
-    puma = 10000000 # set an arbitrarily large initial threshold
-    tiger = 0 # initialize the position holder
-    for i in range(0,len(current)): # loop through the options
-        leopard = distance(res_dict[current[i]], res_dict[handful[-1]]) # check distance of option to end point
-        if leopard < puma:
-            puma = leopard # if it's closer, make it new threshold
-            tiger = i # save its position
-    if current[tiger] == (handful[-1]): # check if it's the end point
-        path.append((handful[-1]))
-        return print('succeed', path)
-    next_current = current[tiger] # new variable name for the best choice
-    # current = list(set(alldict[current[tiger]]) - set(path))
-    # if current == []:
-        # return 'failed', path
-    DFS3(next_current) # recurse to the next step with as a point
 
 def DFS4(current): # takes a point input
     global alldict, handful, res_dict, failure
@@ -167,18 +135,6 @@ def DFS4(current): # takes a point input
     #     return 'failed', path
     DFS4(next_current) # recurse to the next step with as a point
 
-def letsgo():
-    global res_dict, alldict, handful, path, failure
-    handful, alldict = gathering()
-    path = []
-    if alldict[handful[0]] == []:
-        failure += 1
-        return print('failed start')
-    if alldict[handful[-1]] == []:
-        failure += 1
-        return print('failed end')
-    DFS3(310)
-
 def letsgo2():
     global res_dict, alldict, handful, path, failure
     handful, alldict = gathering()
@@ -190,35 +146,19 @@ def letsgo2():
         failure += 1
         return
     DFS4(310)
-    # f.write(str(failure))
 
-# f = open('/Users/ajstein/Documents/allostery/failure.txt', 'w')
-# f.close()
-# f = open('/Users/ajstein/Documents/allostery/failure.txt', 'a')
+f = open('/home/ajstein/allostery/failure.txt', 'w')
+f.close()
+f = open('/home/ajstein/allostery/failure.txt', 'a')
 n = 100
 for i in range(0,n):
     failure = 0
-    letsgo()
-    # f.write(str(failure) + '\n')
-    # print(failure)
-# print('success: ', (n - failure))
-# print('success rate: ', (n - failure)*100/n,'%')
+    letsgo2()
+    f.write(str(failure) + '\n')
+
 f.close()
 
 
 
-# READING THE FILES RETURNED FROM THE CLUSTER #
-# n = 1000000
-# num_lines = sum(int(line) for line in open('/Users/ajstein/Documents/allostery/failure.txt'))
-# print('\n')
-# print('Total Failures: ', num_lines)
-# print('Success Ratio: ', (n - num_lines)*100./n, '%')
 
-
-
-
-
-
-
-print("--- %s seconds ---" % (time.time() - start_time))
 # bottom
