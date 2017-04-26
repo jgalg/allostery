@@ -91,7 +91,7 @@ def distance(pointA, pointB):
 
 def gathering():
     global res_dict
-    threshold = 6.5
+    threshold = 6
     alldict = {}
     random.seed()
     handful = random.sample(list(res_dict2), 21)
