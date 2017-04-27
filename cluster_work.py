@@ -150,7 +150,7 @@ def letsgo2():
 f = open('/home/ajstein/allostery/failure.txt', 'w')
 f.close()
 f = open('/home/ajstein/allostery/failure.txt', 'a')
-n = 1000000
+n = 100000
 for i in range(0,n):
     failure = 0
     letsgo2()
