@@ -107,9 +107,6 @@ plt.setp(sixth, linestyle = '', marker = '.', color=color6)
 
 fig, ax = plt.subplots(figsize=(5,5))
 
-colors = ['red', 'blue']
-levels = [0, 1]
-
 nearness1 = np.where(np.array(zs_1) < 26, 0, 1)
 cmap, norm = clr.from_levels_and_colors(levels = [0,1], colors = ['#ccccff', '#e5e5ff'], extend='max')
 ax.scatter(xs_1, ys_1 ,c = nearness1, s=150, marker='.', edgecolor='none', cmap=cmap, norm=norm)
