@@ -1,0 +1,5 @@
+parm /home/kelly/PDZ/fl-1be9_free.prmtop [modi3]
+trajin fl-1be9_free.inpcrd parm [modi3] [modi33]
+autoimage
+nativecontacts :10 :40 writecontacts dist.dat out native.log mindist byresidue
+

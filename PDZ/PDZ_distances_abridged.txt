@@ -1,0 +1,2 @@
+#Frame   Contacts_00000[native] Contacts_00000[nonnative] Contacts_00000[mindist] Contacts_00003[native] Contacts_00003[nonnative] Contacts_00003[mindist] Contacts_00006[native] Contacts_00006[nonnative] Contacts_00006[mindist]
+       1                    358                         0                  1.3286                     82                         0                  2.9178                    104                         0                  1.3340
