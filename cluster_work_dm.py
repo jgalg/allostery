@@ -81,6 +81,41 @@ res_dict2 = {301: (59.665, 65.467, 44.936), 302: (55.93, 65.46, 44.229), 303: (5
             412: (51.036, 53.761, 36.933), 413: (54.37, 52.309, 35.812), 414: (54.872, 50.526, 32.52),
             415: (57.787, 48.123, 31.992)}
 
+real_alldict = {301: [302], 302: [303, 305, 301], 303: [304, 305, 411, 302], 304: [305, 303],
+ 305: [306, 302, 303, 304], 306: [307, 409, 305], 307: [308, 392, 410, 411, 306], 308: [309, 307],
+ 309: [392, 308], 310: [311], 311: [312, 390, 391, 310], 312: [390, 311], 313: [314], 314: [315, 352, 388, 313],
+ 315: [316, 317, 386, 387, 314], 316: [317, 386, 315], 317: [385, 315, 316],
+ 318: [319, 320, 321, 322, 323, 383, 384], 319: [320, 321, 384, 318], 320: [321, 318, 319],
+ 321: [322, 318, 319, 320], 322: [323, 324, 318, 321], 323: [324, 325, 346, 318, 322],
+ 324: [325, 342, 345, 346, 347, 322, 323], 325: [326, 338, 323, 324], 326: [327, 339, 340, 325],
+ 327: [328, 326], 328: [329, 337, 339, 400, 327], 329: [330, 331, 335, 336, 372, 328],
+ 330: [331, 333, 335, 370, 371, 372, 329], 331: [332, 329, 330], 332: [333, 331], 333: [334, 335, 369, 330, 332],
+ 334: [335, 333], 335: [336, 337, 329, 330, 333, 334], 336: [337, 358, 359, 329, 335], 337: [338, 356, 358, 397, 328, 335, 336],
+ 338: [339, 355, 356, 357, 325, 337], 339: [340, 355, 326, 328, 338], 340: [341, 342, 326, 339], 341: [342, 340], 342: [343, 344, 345, 324, 340, 341],
+ 343: [344, 345, 348, 342], 344: [345, 348, 349, 342, 343], 345: [346, 347, 348, 349, 324, 342, 343, 344],
+ 346: [347, 349, 323, 324, 345], 347: [348, 349, 350, 353, 324, 345, 346], 348: [349, 350, 343, 344, 345, 347], 349: [350, 344, 345, 346, 347, 348],
+ 350: [351, 352, 347, 348, 349], 351: [352, 353, 350],
+ 352: [353, 314, 350, 351], 353: [347, 351, 352], 354: [355, 357], 355: [356, 397, 412, 338, 339, 354],
+ 356: [357, 392, 394, 397, 337, 338, 355], 357: [358, 390, 392, 338, 354, 356],
+ 358: [359, 360, 391, 393, 336, 337, 357], 359: [360, 361, 367, 390, 336, 358],
+ 360: [361, 368, 389, 390, 358, 359], 361: [362, 364, 365, 366, 367, 388, 389, 359, 360],
+ 362: [363, 364, 365, 388, 361], 363: [364, 365, 382, 386, 387, 362], 364: [365, 361, 362, 363],
+ 365: [366, 367, 361, 362, 363, 364], 366: [367, 368, 361, 365], 367: [370, 375, 359, 361, 365, 366],
+ 368: [369, 360, 366], 369: [370, 333, 368], 370: [371, 330, 367, 369], 371: [372, 374, 375, 330, 370],
+ 372: [373, 375, 329, 330, 371], 373: [374, 376, 377, 372], 374: [375, 377, 371, 373],
+ 375: [376, 377, 378, 379, 367, 371, 372, 374], 376: [377, 378, 379, 380, 373, 375],
+ 377: [378, 380, 381, 373, 374, 375, 376], 378: [379, 381, 382, 375, 376, 377], 379: [380, 375, 376, 378],
+ 380: [381, 376, 377, 379], 381: [382, 377, 378, 380], 382: [383, 386, 363, 378, 381],
+ 383: [384, 385, 386, 318, 382], 384: [385, 318, 319, 383], 385: [386, 317, 383, 384],
+ 386: [387, 388, 315, 316, 363, 382, 383, 385], 387: [388, 315, 363, 386], 388: [389, 314, 361, 362, 386, 387],
+ 389: [390, 360, 361, 388], 390: [391, 311, 312, 357, 359, 360, 389], 391: [393, 311, 358, 390],
+ 392: [393, 394, 307, 309, 356, 357], 393: [394, 396, 358, 391, 392], 394: [395, 396, 406, 356, 392, 393], 395: [396, 406, 394], 396: [393, 394, 395],
+ 397: [398, 400, 401, 337, 355, 356], 398: [399, 404, 397], 399: [400, 398], 400: [328, 397, 399], 401: [402, 404, 397], 402: [403, 404, 401],
+ 403: [404, 414, 415, 402], 404: [405, 414, 398, 401, 402, 403], 405: [406, 413, 404], 406: [407, 410, 412, 394, 395, 405], 407: [408, 409, 410, 411, 406],
+ 408: [409, 407], 409: [410, 411, 306, 407, 408], 410: [411, 307, 406, 407, 409], 411: [303, 307, 407, 409, 410],
+ 412: [413, 355, 406], 413: [414, 405, 412], 414: [415, 403, 404, 413], 415: [403, 414]}
+
+
 def distance(pointA, pointB):
     x = pointA[0] - pointB[0]
     y = pointA[1] - pointB[1]
@@ -88,72 +123,69 @@ def distance(pointA, pointB):
     dist = np.sqrt(x**2 + y**2 + z**2)
     return dist
 
-
-def gathering():
-    global res_dict
+def real_gathering():
+    global res_dict, real_alldict
     threshold = 6
-    alldict = {}
     random.seed()
-    handful = random.sample(list(res_dict2), 21)
-    handful.insert(0, 310)
-    handful.append(372)
-    for i in handful:
-        templist = []
-        for j in handful:
-            if i == j:
-                continue
-            if distance(res_dict[i], res_dict[j]) < threshold:
-                templist.append(j)
-        alldict[i] = templist
-    return handful, alldict
+    real_handful = random.sample(list(res_dict2), 21)
+    real_handful.insert(0, 313)
+    real_handful.append(376)
+    bad_apples = set(range(301,416)) - set(real_handful)
+    for res in real_handful:
+        real_alldict[res] = list(set(real_alldict[res])- bad_apples)
+    return real_handful, real_alldict
 
-def DFS4(current): # takes a point input
-    global alldict, handful, res_dict, failure
+# z = 0
+def real_DFS3(current): # takes a point input
+    global real_alldict, real_handful, res_dict, failure
+    # global z
     # print('current node: ', current)
     path.append(current)    # add current point to path
-    if alldict[current] == []: # check that it has options
+    if real_alldict[current] == []: # check that it has options
         failure += 1
-        return #failed
-    current = list(set(alldict[current]) - set(path))  # make current now the options for that point, excluding path
+        # z += 1
+        # print("FAILED HERE", z)
+        return print('failed', path)
+    current = list(set(real_alldict[current]) - set(path))  # make current now the options for that point, excluding path
     # print('current branchs: ', current)
     if current == []:
         failure += 1
-        return  # failed
+        return print('failed', path)
     puma = 10000000 # set an arbitrarily large initial threshold
     tiger = 0 # initialize the position holder
     for i in range(0,len(current)): # loop through the options
-        leopard = distance(res_dict[current[i]], res_dict[handful[-1]]) # check distance of option to end point
+        leopard = distance(res_dict[current[i]], res_dict[real_handful[-1]]) # check distance of option to end point
         if leopard < puma:
             puma = leopard # if it's closer, make it new threshold
             tiger = i # save its position
-    if current[tiger] == (handful[-1]): # check if it's the end point
-        path.append((handful[-1]))
-        return # succeed
+    if current[tiger] == (real_handful[-1]): # check if it's the end point
+        path.append((real_handful[-1]))
+        return print('succeed', path)
     next_current = current[tiger] # new variable name for the best choice
     # current = list(set(alldict[current[tiger]]) - set(path))
     # if current == []:
     #     return 'failed', path
-    DFS4(next_current) # recurse to the next step with as a point
+    real_DFS3(next_current) # recurse to the next step with as a point
 
-def letsgo2():
-    global res_dict, alldict, handful, path, failure
-    handful, alldict = gathering()
+def real_letsgo():
+    global res_dict, real_alldict, real_handful, path, failure
+    real_handful, real_alldict = real_gathering()
     path = []
-    if alldict[handful[0]] == []:
+    if real_alldict[real_handful[0]] == []:
         failure += 1
-        return
-    if alldict[handful[-1]] == []:
+        return print('failed start')
+    if real_alldict[real_handful[-1]] == []:
         failure += 1
-        return
-    DFS4(310)
+        return print('failed end')
+    real_DFS3(315)
 
-f = open('/Users/jessegalganov/Documents/allostery/failure.txt"', 'w')
+f = open('/home/ajstein/allostery/failure.txt', 'w')
 f.close()
-f = open('/Users/jessegalganov/Documents/allostery/failure.txt', 'a')
+f = open('/home/ajstein/allostery/failure.txt', 'a')
 n = 100000
 for i in range(0,n):
     failure = 0
-    letsgo2()
+    real_letsgo()
     f.write(str(failure) + '\n')
 
 f.close()
